@@ -1,4 +1,4 @@
-// // index.js
+// // server.js
 // const express = require("express");
 // const cors = require("cors");
 // const mysql = require("mysql2");
@@ -55,7 +55,7 @@
 // app.listen(PORT, () => {
 //   console.log(`✅ API 서버 실행 중: http://localhost:${PORT}`);
 // });
-// index.js
+// server.js
 const express = require("express");
 const cors = require("cors");
 const app = express();
