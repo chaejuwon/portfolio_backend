@@ -12,11 +12,11 @@ app.use(express.json());
 
 // ✅ PostgreSQL 연결
 const db = new Pool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  port: 5432,
+  DB_HOST: process.env.DB_HOST,
+  DB_USER: process.env.DB_USER,
+  DB_PASSWORD: process.env.DB_PASSWORD,
+  DB_NAME: process.env.DB_NAME,
+  PORT: 5432,
   ssl: { rejectUnauthorized: false }, // Render DB는 SSL 필수
 });
 
