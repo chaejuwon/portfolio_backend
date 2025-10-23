@@ -13,10 +13,10 @@ app.use(express.json());
 const db = new Pool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
-  password: process.env.DB_PASS,
+  password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   port: 5432,
-  ssl: false
+  ssl: process.env.DB_SSL === "true" ? { rejectUnauthorized: false } : false
 });
 
 // ✅ 연결 테스트 (로그)
@@ -84,5 +84,5 @@ app.put("/board/:id", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`${PORT}`);
+  console.log(`✅ 서버 실행 중: PORT ${PORT}`);
 });
