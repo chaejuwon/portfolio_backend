@@ -28,12 +28,8 @@ db.connect()
 app.get("/board", async (req, res) => {
   try {
     const result = await db.query(`
-      SELECT 
-        id, 
-        name, 
-        content, 
-        TO_CHAR(created, 'YYYY-MM-DD HH24:MI:SS') AS created, 
-        TO_CHAR(modified, 'YYYY-MM-DD HH24:MI:SS') AS modified 
+      SELECT id, name, content, TO_CHAR(created, 'YYYY-MM-DD HH24:MI:SS') AS created,
+             TO_CHAR(modified, 'YYYY-MM-DD HH24:MI:SS') AS modified 
       FROM board
       ORDER BY id DESC
     `);
