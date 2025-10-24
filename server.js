@@ -7,7 +7,14 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://chaejuwon.github.io",   // 프론트엔드 주소
+    "http://localhost:3000"          // 로컬 개발용 (필요시)
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: false
+}));
 app.use(express.json());
 
 // const db = new Pool({
